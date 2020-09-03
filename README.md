@@ -5,3 +5,5 @@
 
 Использование Thread() и Runnable.
  Использование метода sleep()
+ 
+### branch: `volatile` 
