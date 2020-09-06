@@ -6,4 +6,6 @@
 Использование Thread() и Runnable.
  Использование метода sleep()
  
-### branch: `volatile` 
+### branch: `volatile`
+
+Избавление от плохой Коггернтности кэшей 
