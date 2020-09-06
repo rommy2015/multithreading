@@ -5,8 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import static multithreading.volatilekeyword.UtilsRunVolatile.runThread;
-
 @Component
 public class RunningConsoleApplication implements CommandLineRunner {
 
@@ -18,7 +16,9 @@ public class RunningConsoleApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        runThread();
+
+
+       // runThread();
         //  exampleWorkTwoThreads();
        // withRunnable();
     }
