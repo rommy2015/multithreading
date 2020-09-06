@@ -6,4 +6,6 @@ public class OutputStream {
              System.out.println(message + ":" + i);
 
     }
+
+
 }
