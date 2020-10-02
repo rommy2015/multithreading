@@ -3,18 +3,16 @@ package multithreading.synchronizedthreads;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicInteger;
 
-public class Worker {
+public class WorkerSecond {
 
     Random random = new Random();
 
-    private List<Integer> listFirst = new ArrayList<>();
+    private List<AtomicInteger> listFirst = new ArrayList<>();
 
-    private List<Integer> listSecond = new ArrayList<>();
+    private List<AtomicInteger> listSecond = new ArrayList<>();
 
-    private Object lockMonitorFirst = new Object();
-
-    private Object lockMonitorSecond = new Object();
 
     public void addToListElements(){
 
@@ -29,31 +27,31 @@ public class Worker {
      * перед тем, как добавить элемент в массив, поток будет засыпать
      * на 1 миллисекунду, при работе с указанным объектом.
      */
-    private synchronized void addToListFirst(){
-        synchronized (lockMonitorFirst){
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+    private  void addToListFirst(){
 
-            int nextInt = random.nextInt(100);
-            this.listFirst.add(nextInt);
+        try {
+            Thread.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+
+        int nextInt = random.nextInt(100);
+        AtomicInteger atomicInteger1 = new AtomicInteger(10);
+        this.listFirst.add(atomicInteger1);
 
     }
 
-    private  void addToListSecond(){
-        synchronized (lockMonitorSecond){
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+    private synchronized void addToListSecond(){
 
-            int nextInt = random.nextInt(100);
-            this.listSecond.add(nextInt);
+        try {
+            Thread.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+
+        int nextInt = random.nextInt(100);
+        AtomicInteger atomicInteger1 = new AtomicInteger(10);
+        this.listSecond.add(atomicInteger1);
 
     }
 
