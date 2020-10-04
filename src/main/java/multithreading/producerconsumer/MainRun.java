@@ -70,7 +70,6 @@ public class MainRun {
                     System.out.println(currentElementFromQueue);
                 }
 
-
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
