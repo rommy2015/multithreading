@@ -6,8 +6,12 @@ public class CountDownLatchExample implements Runnable {
 
     private CountDownLatch countDownLatch;
 
-    public CountDownLatchExample(CountDownLatch countDownLatch) {
+    private int idThread;
+
+    public CountDownLatchExample(CountDownLatch countDownLatch,
+                                 int idThread) {
         this.countDownLatch = countDownLatch;
+        this.idThread = idThread;
     }
 
     @Override
@@ -19,9 +23,15 @@ public class CountDownLatchExample implements Runnable {
             e.printStackTrace();
         }
 
-        System.out.println("Событие сработало для потока...");
-        this.countDownLatch.countDown();
+        System.out.println("Поток ожидает когда счетчик защелки станет = 0...");
 
+        try {
+            this.countDownLatch.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Поток с id = " + this.idThread + " ... проснулся..");
 
     }
 }

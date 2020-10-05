@@ -1,7 +1,6 @@
 package multithreading.сountdownlatch;
 
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -16,7 +15,7 @@ public class MainRun {
         for(int i = 0; i < 3; i++){
 
             CountDownLatchExample countDownLatchExample =
-                    new CountDownLatchExample(countDownLatch);
+                    new CountDownLatchExample(countDownLatch, i);
 
             executorService.submit(countDownLatchExample);
         }
@@ -24,14 +23,19 @@ public class MainRun {
         executorService.shutdown(); /*обязательно нужно вызывать данный метод,
         чтобы прекратить исопльзование текущего пула потоков и постановку задач им*/
 
-        try {
-            countDownLatch.await();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+       for (int i = 0; i < 3; i++){
 
-        System.out.println("Защелка от класса CountDownLatch" +
-                " была открыта и главный поток продолжает работу...");
+           try {
+               Thread.sleep(1000);
+           } catch (InterruptedException e) {
+               e.printStackTrace();
+           }
+
+           System.out.println("Главный поток: Счетчик событий уменьшился  на " + 1);
+           countDownLatch.countDown();
+
+
+       }
     }
 
 }
