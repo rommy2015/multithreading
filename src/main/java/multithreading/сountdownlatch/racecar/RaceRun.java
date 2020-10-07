@@ -40,7 +40,6 @@ public class RaceRun {
         /*Команда дана, уменьшаем счетчик на 1*/
         START.countDown();
 
-
         Thread.sleep(1000);
         System.out.println("Внимание!");
 
