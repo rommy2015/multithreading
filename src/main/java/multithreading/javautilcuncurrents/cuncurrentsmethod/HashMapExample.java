@@ -1,4 +1,4 @@
-package multithreading.javautilcuncurrents;
+package multithreading.javautilcuncurrents.cuncurrentsmethod;
 
 import java.util.HashMap;
 import java.util.Iterator;

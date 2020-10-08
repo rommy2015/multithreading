@@ -1,4 +1,4 @@
-package multithreading.javautilcuncurrents;
+package multithreading.javautilcuncurrents.cuncurrentsmethod;
 
 import java.util.ArrayList;
 import java.util.Collections;

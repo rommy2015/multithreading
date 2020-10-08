@@ -1,4 +1,4 @@
-package multithreading.javautilcuncurrents;
+package multithreading.javautilcuncurrents.cuncurrentsmethod;
 
 import org.apache.commons.lang3.RandomStringUtils;
 

@@ -1,4 +1,4 @@
-package multithreading.javautilcuncurrents;
+package multithreading.javautilcuncurrents.cuncurrentsmethod;
 
 public class ConcurrentHashMapExample {
 
