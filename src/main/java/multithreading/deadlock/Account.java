@@ -13,6 +13,7 @@ public class Account {
         this.balance += amount;
     }
 
+
     /*списаине денег с баланса*/
     public void writeOffMoneyFromBalance(int amount){
         this.balance -= amount;
