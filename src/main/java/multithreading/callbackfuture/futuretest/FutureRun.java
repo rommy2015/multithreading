@@ -16,10 +16,15 @@ public class FutureRun {
         String keyword = in.nextLine();
 
         System.out.println("Запуск задачи в точке входа:");
+
         MatchCounter counter = new MatchCounter(new File(directory), keyword);
+
         FutureTask task = new FutureTask(counter);
+
         Thread thread = new Thread(task);
+
         thread.start();
+
         System.out.println();
 
         try {

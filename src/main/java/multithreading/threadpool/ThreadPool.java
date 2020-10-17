@@ -18,6 +18,5 @@ public class ThreadPool implements Runnable{
         }
 
         System.out.println("This task with id : " + this.id + " is done.");
-
     }
 }
